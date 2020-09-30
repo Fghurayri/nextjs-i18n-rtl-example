@@ -1,11 +1,11 @@
 // @ts-nocheck
 import I18nProvider from 'next-translate/I18nProvider'
 import React from 'react'
-import C from '../pages_'
+import C, * as _rest from '../pages_/about'
 import ns0 from '../public/locales/en/common.json'
-import ns1 from '../public/locales/en/home.json'
+import ns1 from '../public/locales/en/about.json'
 
-const namespaces = { 'common': ns0, 'home': ns1 }
+const namespaces = { 'common': ns0, 'about': ns1 }
 
 export default function Page(p){
   return (
@@ -28,7 +28,7 @@ if(C && C.getInitialProps) {
 
 
 
-
+export const getServerSideProps = ctx => _rest.getServerSideProps({ ...ctx, lang: 'en' })
 
 
 
