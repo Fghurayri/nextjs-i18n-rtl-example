@@ -1,5 +1,6 @@
 import useTranslation from "next-translate/useTranslation";
 import Link from "next-translate/Link";
+import Trans from "next-translate/Trans";
 import i18nConfig from "../i18n.json";
 import DynamicNamespaces from "next-translate/DynamicNamespaces";
 
@@ -31,7 +32,7 @@ export default function About({ translations }) {
   return (
     <DynamicNamespaces dynamic={() => translations} namespaces={["cms"]}>
       <div dir={getDirFromLang(lang)}>
-        <p>{t("common:welcome")}</p>
+        <Trans i18nKey="cms:welcome" />
         <p>{t("about:age", { ageValue: 32 })}</p>
         <Link href="/">{t(`common:pageTitles.home`)}</Link>
         {allLanguages.map((lng) =>
